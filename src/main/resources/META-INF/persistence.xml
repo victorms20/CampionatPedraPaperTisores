@@ -1,0 +1,26 @@
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0"
+>
+  <persistence-unit name="persistencia">
+
+    <class>clases.App</class>
+    <class>clases.Jugador</class>
+    <class>clases.Jugada</class>
+    <class>clases.Partida</class>
+
+    <!--  Propietats de la connexió amb la BD  -->
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/torneo"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.password" value="admin"/>
+      <property name="hibernate.hdm2ddl.auto" value="validate"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.current_session_context_class" value="thread"/>
+        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+    </properties>
+  </persistence-unit>
+</persistence>
